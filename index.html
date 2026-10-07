@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MergePoint | Managed IT for small businesses in New Zealand</title>
+<meta name="description" content="MergePoint provides managed IT support, Microsoft 365, networking, security and backup for small businesses in New Zealand.">
+<meta name="theme-color" content="#272e1b">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Brand colours, taken from the MergePoint mark SVGs */
+  :root {
+    --olive: #272e1b;
+    --rust: #8c491a;
+    --cream: #f5ead8;
+    --peach: #f6a06b;
+
+    --ground: #fbf6ec;
+    --surface: #f5ead8;
+    --ink: #272e1b;
+    --muted: #55594a;
+    --rule: #e2d6c0;
+    --accent: #8c491a;
+    --font: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #1f2516;
+      --surface: #272e1b;
+      --ink: #f5ead8;
+      --muted: #c9bfa9;
+      --rule: #3a4229;
+      --accent: #f6a06b;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-underline-offset: 0.2em; }
+  a:focus-visible, .button:focus-visible {
+    outline: 3px solid var(--peach);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .skip {
+    position: absolute; left: 1rem; top: -3rem; z-index: 10;
+    background: var(--cream); color: var(--olive);
+    padding: 0.5rem 0.875rem; text-decoration: none; font-weight: 600;
+  }
+  .skip:focus { top: 1rem; }
+
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Header and hero sit on brand olive, like the reversed lockup */
+  .top {
+    background: var(--olive);
+    color: var(--cream);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 1.5rem; padding-bottom: 1.5rem;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    color: var(--cream); text-decoration: none;
+  }
+  .brand svg { width: 2.5rem; height: auto; display: block; }
+  .brand-name { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1; }
+  .header-link { color: var(--peach); font-weight: 600; text-decoration: none; }
+  .header-link:hover { text-decoration: underline; }
+
+  .hero .wrap {
+    display: grid; grid-template-columns: 1fr; gap: 3rem;
+    padding-top: 2.5rem; padding-bottom: 5rem; align-items: center;
+  }
+  @media (min-width: 860px) {
+    .hero .wrap { grid-template-columns: 1.15fr 1fr; padding-top: 4rem; padding-bottom: 6.5rem; }
+  }
+  h1 {
+    margin: 0;
+    font-weight: 800;
+    font-size: clamp(2.375rem, 5.4vw, 4rem);
+    line-height: 1.04; letter-spacing: -0.025em;
+    max-width: 14ch;
+  }
+  .lede {
+    margin: 1.5rem 0 0; max-width: 34rem;
+    font-size: 1.1875rem; color: #d9cfbb;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+  .button {
+    display: inline-block; padding: 0.85rem 1.4rem;
+    font: inherit; font-weight: 700; text-decoration: none;
+    border-radius: 999px; border: 2px solid transparent;
+  }
+  .button.primary { background: var(--peach); color: var(--olive); }
+  .button.primary:hover { background: var(--cream); }
+  .button.secondary { color: var(--cream); border-color: rgba(245, 234, 216, 0.45); }
+  .button.secondary:hover { border-color: var(--cream); }
+
+  /* The mark, large: the one bold moment on the page */
+  .hero-mark { width: 100%; max-width: 13rem; height: auto; justify-self: start; display: block; }
+  @media (min-width: 860px) { .hero-mark { max-width: 26rem; justify-self: end; } }
+  .hero-mark .point {
+    transform-box: fill-box; transform-origin: center;
+    animation: land 0.9s cubic-bezier(.2,.9,.25,1.15) 0.25s both;
+  }
+  @keyframes land {
+    from { transform: translate(40%, -40%) scale(0.2); opacity: 0; }
+    to { transform: none; opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .hero-mark .point { animation: none; } }
+
+  /* Services */
+  .services .wrap { padding-top: 5rem; padding-bottom: 4.5rem; }
+  h2 {
+    margin: 0 0 2rem;
+    font-weight: 750;
+    font-size: clamp(1.75rem, 3.2vw, 2.375rem);
+    line-height: 1.12; letter-spacing: -0.02em;
+  }
+  .service-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr; column-gap: 3.5rem;
+  }
+  @media (min-width: 760px) { .service-list { grid-template-columns: 1fr 1fr; } }
+  .service-list li {
+    padding: 1.375rem 0 1.375rem 1.75rem;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+  .service-list li::before {
+    content: ""; position: absolute; left: 0; top: 1.85rem;
+    width: 0.7rem; height: 0.7rem; border-radius: 50%;
+    background: var(--accent);
+  }
+  .service-list h3 { margin: 0 0 0.375rem; font-size: 1.1875rem; font-weight: 700; }
+  .service-list p { margin: 0; color: var(--muted); max-width: 32rem; }
+
+  /* Support */
+  .support { background: var(--surface); }
+  .support .wrap { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  .support-intro { margin: 0 0 2.5rem; max-width: 38rem; color: var(--muted); }
+  .contact { margin: 0; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 760px) { .contact { grid-template-columns: auto auto; justify-content: start; column-gap: 5rem; } }
+  .contact dt { font-size: 0.9375rem; color: var(--muted); margin-bottom: 0.25rem; }
+  .contact dd { margin: 0; }
+  .contact a {
+    font-weight: 700;
+    font-size: clamp(1.375rem, 3vw, 1.875rem);
+    text-decoration: none; color: var(--ink);
+    border-bottom: 3px solid var(--accent); overflow-wrap: anywhere;
+  }
+  .contact a:hover { color: var(--accent); }
+
+  /* Footer */
+  .site-footer {
+    background: var(--olive); color: #d9cfbb;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .site-footer .wrap {
+    padding-top: 2.25rem; padding-bottom: 2.5rem;
+    font-size: 0.9375rem; display: grid; gap: 0.25rem;
+  }
+  .site-footer p { margin: 0; }
+  .legal-name { color: var(--cream); font-weight: 700; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="top">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="MergePoint home">
+        <svg viewBox="0 32 134 118" aria-hidden="true">
+          <path d="M12,100 V60 a15,15 0 0 1 30,0 V100 M42,60 a15,15 0 0 1 30,0 V138" fill="none" stroke="#f5ead8" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="97" cy="72.5" r="31.5" fill="#f6a06b"/>
+        </svg>
+        <span class="brand-name">MergePoint</span>
+      </a>
+      <a class="header-link" href="#support">Get support</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-heading">Managed IT for small businesses in New Zealand</h1>
+        <p class="lede">Friendly, local IT support for businesses that don't have an IT department. We look after the computers, network and Microsoft&nbsp;365 your team relies on, so you can get on with running the business.</p>
+        <div class="actions">
+          <a class="button primary" href="mailto:paul.aragon@mergepoint.co.nz?subject=Support%20request">Email support</a>
+          <a class="button secondary" href="tel:+64224232647">Call 022 423 2647</a>
+        </div>
+      </div>
+
+      <svg class="hero-mark" viewBox="0 32 134 118" role="img" aria-label="MergePoint logo mark">
+        <path d="M12,100 V60 a15,15 0 0 1 30,0 V100 M42,60 a15,15 0 0 1 30,0 V138" fill="none" stroke="#f5ead8" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle class="point" cx="97" cy="72.5" r="31.5" fill="#f6a06b"/>
+      </svg>
+    </div>
+  </section>
+</div>
+
+<main id="main">
+  <section class="services" aria-labelledby="services-heading">
+    <div class="wrap">
+      <h2 id="services-heading">What we do</h2>
+      <ul class="service-list">
+        <li>
+          <h3>Everyday IT support</h3>
+          <p>Someone who knows your setup and picks up when you call. We keep an eye on things in the background, keep everything updated, and sort out the small problems before they turn into a bad day.</p>
+        </li>
+        <li>
+          <h3>Microsoft 365 and the cloud</h3>
+          <p>Email, Teams, SharePoint and OneDrive set up securely, licensed correctly, and looked after as your team grows. Moving your files to the cloud? We'll plan it so nothing gets lost along the way.</p>
+        </li>
+        <li>
+          <h3>Networks and Wi-Fi</h3>
+          <p>Firewalls, switches, Wi-Fi and secure remote access, designed around how your place actually works, from the front office to the yard.</p>
+        </li>
+        <li>
+          <h3>Security that makes sense</h3>
+          <p>Protection on every device, stronger sign-ins, and regular check-ups that make your business a harder target. We'll explain what we're doing in plain English.</p>
+        </li>
+        <li>
+          <h3>Backup and recovery</h3>
+          <p>Backups we actually test, not just schedule. If a drive dies or a file disappears, we'll get you back up and working.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="support" id="support" aria-labelledby="support-heading">
+    <div class="wrap">
+      <h2 id="support-heading">Get support</h2>
+      <p class="support-intro">Flick us an email or give us a call. Let us know who you are, your company, and what's going on, and we'll get onto it.</p>
+      <dl class="contact">
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:paul.aragon@mergepoint.co.nz?subject=Support%20request">paul.aragon@mergepoint.co.nz</a></dd>
+        </div>
+        <div>
+          <dt>Phone</dt>
+          <dd><a href="tel:+64224232647">022 423 2647</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <!-- EDIT: confirm the legal name matches the Companies Office register exactly -->
+    <p class="legal-name">MERGEPOINT LIMITED</p>
+    <p>Registered in New Zealand. NZBN 9429053991348</p>
+    <p>&copy; 2026 MergePoint</p>
+  </div>
+</footer>
+</body>
+</html>
